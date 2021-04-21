@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Provide Services</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/Prov_services.css') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+  <nav class="navbar navbar-expand navbar-dark bg-dark" aria-label="Second navbar example">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Covid Data Repository</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExample02">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" href={{url_for("dashboard")}}>Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href={{url_for("services")}}>Services</a>
+          </li>
+		   <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href={{url_for("Prov_services")}}>Provide Services</a>
+          </li>
+		  <li>
+			<a class="nav-link" href={{url_for("AboutUs")}}>About Us</a>
+		  </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="preform">
+  <h2>Provide services</h2>
+  <p> Help us expand this network and repository to providing resources and services.</p>
+  </div>
+  <div class="form1">
+      <form method="POST" action="">
+          Service <input type="text" name="Service" maxlength="30" size="30">
+          <br>
+          Name    <input type="text" name="Name" maxlength="30" size="30">
+          <br>
+          Phone No<input type="text" name="Phone_No" maxlength="10" size="30">
+          <br>
+          Address(optional) <textarea name="Address" rows="5" cols="70"> </textarea>
+          <br>
+          Email(optional)   <input type="text" name="Email" maxlength="50" size="50">
+          <br>
+          Comments(optional)<textarea name="Comments" rows="5" cols="70"></textarea>
+          <br>
+          <input type="submit">
+      </form>
+  </div>
+</body>
+</html>

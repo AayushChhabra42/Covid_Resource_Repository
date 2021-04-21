@@ -1,0 +1,61 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/navbar.css') }}">
+        <title>Covid Data Repository:Services</title>
+
+</head>
+<body>
+  <nav class="navbar navbar-expand navbar-dark bg-dark" aria-label="Second navbar example">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Data_Patch</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExample02">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" href={{url_for("dashboard")}}>Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href={{url_for("services")}}>Services</a>
+          </li>
+		   <li class="nav-item">
+            <a class="nav-link" href={{url_for("Prov_services")}}>Provide Services</a>
+          </li>
+		  <li>
+			<a class="nav-link" href={{url_for("AboutUs")}}>About Us</a>
+		  </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="list1">
+      <table class="styled-table">
+          <thead>
+          <tr>
+              <th>Service</th>
+              <th>Name</th>
+              <th>Phone_No</th>
+              <th>Address</th>
+              <th>Email</th>
+              <th>Comments</th>
+          </tr>
+          </thead>
+          <tbody>
+                {% for row in data %}
+                    <tr>
+                        <td>{{row[0]}}</td>
+                        <td>{{row[1]}}</td>
+                        <td>{{row[2]}}</td>
+                        <td>{{row[3]}}</td>
+                        <td>{{row[4]}}</td>
+                        <td>{{row[5]}}</td>
+                    </tr>
+                {% endfor %}
+          </tbody>
+      </table>
+  </div>
+</body>
+</html>
